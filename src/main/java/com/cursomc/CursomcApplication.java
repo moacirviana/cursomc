@@ -9,10 +9,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.cursomc.domain.Categoria;
 import com.cursomc.domain.Cidade;
+import com.cursomc.domain.Cliente;
+import com.cursomc.domain.Endereco;
 import com.cursomc.domain.Estado;
 import com.cursomc.domain.Produto;
+import com.cursomc.domain.enums.TipoCliente;
 import com.cursomc.repositories.CategoriaRepository;
 import com.cursomc.repositories.CidadeRepository;
+import com.cursomc.repositories.ClienteRepository;
+import com.cursomc.repositories.EnderecoRepository;
 import com.cursomc.repositories.EstadoRepository;
 import com.cursomc.repositories.ProdutoRepository;
 
@@ -30,6 +35,12 @@ public class CursomcApplication implements CommandLineRunner {
 	
 	@Autowired
 	private EstadoRepository estadoRepository;
+	
+	@Autowired
+	private ClienteRepository clienteRepository;
+	
+	@Autowired
+	private EnderecoRepository enderecoRepository;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(CursomcApplication.class, args);
@@ -60,10 +71,17 @@ public class CursomcApplication implements CommandLineRunner {
 		Cidade c3 = new Cidade(null,"Campinas", est2);
 		est1.setCidades(Arrays.asList(c1));
 		est2.setCidades(Arrays.asList(c2,c3));
-		
 		estadoRepository.saveAll(Arrays.asList(est1, est2));
 		cidadeRepository.saveAll(Arrays.asList(c1,c2,c3));
 		
+		// CLIENTES E ENDERECOS
+		Cliente cli1 = new Cliente(null,"Maria Silva", "maria@gmail.com","43637833204", TipoCliente.PESSOAFISICA);
+		cli1.getTelefones().addAll(Arrays.asList("981536356","981234258"));
+		Endereco e1 = new Endereco (null, "Rua Flores", "300", "Apto 303","Jardim", "38220834", cli1,c1 );
+		Endereco e2 = new Endereco (null, "Av Matos", "105", "Sala 800","Centro", "38777012", cli1,c2 );
+		cli1.setEnderecos(Arrays.asList(e1, e2));
+		clienteRepository.saveAll(Arrays.asList(cli1));
+		enderecoRepository.saveAll(Arrays.asList(e1, e2));
 		
 	}
 }
