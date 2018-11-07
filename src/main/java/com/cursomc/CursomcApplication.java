@@ -70,6 +70,13 @@ public class CursomcApplication implements CommandLineRunner {
 		// CATEGORIAS E PRODUTOS
 		Categoria cat1 = new Categoria(null,"Informática");
 		Categoria cat2 = new Categoria(null,"Escritorio");
+		Categoria cat3 = new Categoria(null,"Cama mesa e banho");
+		Categoria cat4 = new Categoria(null,"Eletrônicos");
+		Categoria cat5 = new Categoria(null,"Jardinagem");
+		Categoria cat6 = new Categoria(null,"Perfumaria");
+		Categoria cat7 = new Categoria(null,"Vestiário");
+		Categoria cat8 = new Categoria(null,"Calçados");
+		
 		Produto p1 = new Produto(null, "Computador", 2000.00);
 		Produto p2 = new Produto(null, "Impressora", 800.00);
 		Produto p3 = new Produto(null, "Mouse", 80.00);
@@ -79,7 +86,7 @@ public class CursomcApplication implements CommandLineRunner {
 		p1.setCategorias(Arrays.asList(cat1));
 		p2.setCategorias(Arrays.asList(cat1, cat2));
 		p3.setCategorias(Arrays.asList(cat1));
-		categoriaRepository.saveAll(Arrays.asList(cat1, cat2));
+		categoriaRepository.saveAll(Arrays.asList(cat1, cat2, cat3, cat4, cat5, cat6, cat7, cat8));
 		produtoRepository.saveAll(Arrays.asList(p1, p2, p3));
 		
 		// ESTADO E CIDADES
