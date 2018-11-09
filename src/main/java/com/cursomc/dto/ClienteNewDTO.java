@@ -20,6 +20,7 @@ public class ClienteNewDTO implements Serializable{
 	  @NotEmpty(message="Preenchimento obrigatório")
 	  @Email(message="Email inválido")
 	  private String email;
+    // @Column(unique=true) faz a JPA entender que é uma chave candidata, não insere dois valores iquais	  
 	  
 	  @NotEmpty(message="Preenchimento obrigatório")
 	  private String cpfOuCnpj;
