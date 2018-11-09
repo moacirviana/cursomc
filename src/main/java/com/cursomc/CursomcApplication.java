@@ -80,14 +80,116 @@ public class CursomcApplication implements CommandLineRunner {
 		Produto p1 = new Produto(null, "Computador", 2000.00);
 		Produto p2 = new Produto(null, "Impressora", 800.00);
 		Produto p3 = new Produto(null, "Mouse", 80.00);
-		cat1.setProdutos(Arrays.asList(p1, p2, p3));
+		Produto p4 = new Produto(null, "Pen Drive 16GB", 20.00);
+		
+		Produto p10 = new Produto(null, "Produto 10", 180.00);
+		Produto p11 = new Produto(null, "Produto 11", 1.00);
+		Produto p12 = new Produto(null, "Produto 12", 12.00);
+		Produto p13 = new Produto(null, "Produto 13", 13.00);
+		Produto p14 = new Produto(null, "Produto 14", 14.00);
+		Produto p15 = new Produto(null, "Produto 15", 15.00);
+		Produto p16 = new Produto(null, "Produto 16", 16.00);
+		Produto p17 = new Produto(null, "Produto 17", 17.00);
+		Produto p18 = new Produto(null, "Produto 18", 18.00);
+		Produto p19 = new Produto(null, "Produto 19", 19.00);
+		Produto p20 = new Produto(null, "Produto 20", 20.00);
+		Produto p21 = new Produto(null, "Produto 21", 21.00);
+		Produto p22 = new Produto(null, "Produto 22", 22.00);
+		Produto p23 = new Produto(null, "Produto 23", 23.00);
+		Produto p24 = new Produto(null, "Produto 24", 24.00);
+		Produto p25 = new Produto(null, "Produto 25", 25.00);
+		Produto p26 = new Produto(null, "Produto 26", 26.00);
+		Produto p27 = new Produto(null, "Produto 27", 27.00);
+		Produto p28 = new Produto(null, "Produto 28", 28.00);
+		Produto p29 = new Produto(null, "Produto 29", 29.00);
+		Produto p30 = new Produto(null, "Produto 30", 30.00);
+		Produto p31 = new Produto(null, "Produto 31", 31.00);
+		Produto p32 = new Produto(null, "Produto 32", 32.00);
+		Produto p33 = new Produto(null, "Produto 33", 33.00);
+		Produto p34 = new Produto(null, "Produto 34", 34.00);
+		Produto p35 = new Produto(null, "Produto 35", 35.00);
+		Produto p36 = new Produto(null, "Produto 36", 10.00);
+		Produto p37 = new Produto(null, "Produto 37", 10.00);
+		Produto p38 = new Produto(null, "Produto 38", 10.00);
+		Produto p39 = new Produto(null, "Produto 39", 10.00);
+		Produto p40 = new Produto(null, "Produto 40", 10.00);
+		Produto p41 = new Produto(null, "Produto 41", 10.00);
+		Produto p42 = new Produto(null, "Produto 42", 10.00);
+		Produto p43 = new Produto(null, "Produto 43", 10.00);
+		Produto p44 = new Produto(null, "Produto 44", 10.00);
+		Produto p45 = new Produto(null, "Produto 45", 10.00);
+		Produto p46 = new Produto(null, "Produto 46", 10.00);
+		Produto p47 = new Produto(null, "Produto 47", 10.00);
+		Produto p48 = new Produto(null, "Produto 48", 10.00);
+		Produto p49 = new Produto(null, "Produto 49", 10.00);
+		Produto p50 = new Produto(null, "Produto 50", 10.00);
+		
+		
+		// cat1.setProdutos(Arrays.asList(p1, p2, p3));
+		cat1.getProdutos().addAll(Arrays.asList(p1, p2, p3, p12, p13, p14, p15, p16, p17, p18, p19, p20,
+				p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31, p32, p34, p35, p36, p37, p38,
+				p39, p40, p41, p42, p43, p44, p45, p46, p47, p48, p49, p50));
 		// outra forma de atribuir: cat1.getProdutos().addAll(Arrays.asList(p1, p2, p3));
-		cat2.setProdutos(Arrays.asList(p2));
+		cat2.setProdutos(Arrays.asList(p2, p4, p10, p11));
+		cat3.getProdutos().addAll(Arrays.asList(p13, p14, p17, p18));
+		
 		p1.setCategorias(Arrays.asList(cat1));
 		p2.setCategorias(Arrays.asList(cat1, cat2));
 		p3.setCategorias(Arrays.asList(cat1));
+		
+		p10.getCategorias().add(cat1);
+		p11.getCategorias().add(cat1);
+		p12.getCategorias().add(cat1);
+		p13.getCategorias().add(cat1);
+		p14.getCategorias().add(cat1);
+		p15.getCategorias().add(cat1);
+		p16.getCategorias().add(cat1);
+		p17.getCategorias().add(cat1);
+		p18.getCategorias().add(cat1);
+		p19.getCategorias().add(cat1);
+		p20.getCategorias().add(cat1);
+		p21.getCategorias().add(cat1);
+		p22.getCategorias().add(cat1);
+		p23.getCategorias().add(cat1);
+		p24.getCategorias().add(cat1);
+		p25.getCategorias().add(cat1);
+		p26.getCategorias().add(cat1);
+		p27.getCategorias().add(cat1);
+		p28.getCategorias().add(cat2);
+		p29.getCategorias().add(cat2);
+		p30.getCategorias().add(cat2);
+		p31.getCategorias().add(cat2);
+		p32.getCategorias().add(cat2);
+		p33.getCategorias().add(cat3);
+		p34.getCategorias().add(cat3);
+		p35.getCategorias().add(cat3);
+		p36.getCategorias().add(cat3);
+		p37.getCategorias().add(cat3);
+		p38.getCategorias().add(cat3);
+		p39.getCategorias().add(cat1);
+		p40.getCategorias().add(cat1);
+		p41.getCategorias().add(cat1);
+		p42.getCategorias().add(cat1);
+		p43.getCategorias().add(cat1);
+		p44.getCategorias().add(cat1);
+		p45.getCategorias().add(cat1);
+		p46.getCategorias().add(cat1);
+		p47.getCategorias().add(cat1);
+		p48.getCategorias().add(cat1);
+		p49.getCategorias().add(cat1);
+		p50.getCategorias().add(cat1);	
+		
+		
+		
+		
 		categoriaRepository.saveAll(Arrays.asList(cat1, cat2, cat3, cat4, cat5, cat6, cat7, cat8));
-		produtoRepository.saveAll(Arrays.asList(p1, p2, p3));
+		// produtoRepository.saveAll(Arrays.asList(p1, p2, p3));
+		
+		produtoRepository.saveAll(Arrays.asList(p1,p2,p3,p4, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20,
+				p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31, p32, p33, p34, p35, p36, p37, p38,
+				p39, p40, p41, p42, p43, p44, p45, p46, p47, p48, p49, p50));
+		
+		
 		
 		// ESTADO E CIDADES
 		Estado est1 = new Estado(null,"Minas Gerais");
