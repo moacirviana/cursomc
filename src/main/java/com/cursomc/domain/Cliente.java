@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.CollectionTable;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
@@ -37,8 +38,9 @@ public class Cliente implements Serializable{
   @OneToMany(mappedBy="cliente")
   private List<Pedido> pedidos = new ArrayList<>();
     
-  @OneToMany(mappedBy="cliente")
+  @OneToMany(mappedBy="cliente", cascade=CascadeType.ALL)
   private List<Endereco> enderecos = new ArrayList<>();
+  // cascade=CascadeType.ALL permite a deleção de enderecos se um cliente for deletado
   
   @ElementCollection
   @CollectionTable(name="TELEFONE")
