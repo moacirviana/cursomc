@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.cursomc.domain.Categoria;
 import com.cursomc.domain.ItemPedido;
@@ -36,13 +37,17 @@ public class PedidoService {
 	
 	@Autowired
 	private ClienteService clienteService;
+	
+	@Autowired
+	private EmailService emailService;
     
     public Pedido find(Integer id) {
     	Optional<Pedido> obj = repo.findById(id); 
     	return obj.orElseThrow(() -> new ObjectNotFoundException( 
     		      "Objeto não encontrado! Id: " + id + ", Tipo: " + Categoria.class.getName()));  
    }
-    
+   
+   @Transactional
    public Pedido insert(Pedido obj) {
 		obj.setId(null);
 		obj.setInstante(new Date());
@@ -62,8 +67,8 @@ public class PedidoService {
 			ip.setPedido(obj);
 		}
 		itemPedidoRepository.saveAll(obj.getItens());
-		// emailService.sendOrderConfirmationEmail(obj);
-		System.out.println(obj); // chama automaticamente o toString
+		emailService.sendOrderConfirmationEmail(obj);
+		//System.out.println(obj); // chama automaticamente o toString
 		return obj;
 }
     
