@@ -20,6 +20,7 @@ import com.cursomc.domain.PagamentoComCartao;
 import com.cursomc.domain.Pedido;
 import com.cursomc.domain.Produto;
 import com.cursomc.domain.enums.EstadoPagamento;
+import com.cursomc.domain.enums.Perfil;
 import com.cursomc.domain.enums.TipoCliente;
 import com.cursomc.repositories.CategoriaRepository;
 import com.cursomc.repositories.CidadeRepository;
@@ -210,8 +211,7 @@ public class DBService {
 		Cliente cli2 = new Cliente(null, "Ana Costa", "moacir.viana@gmail.com", "31628382740", TipoCliente.PESSOAFISICA, pe.encode("123")
 		);
 		cli2.getTelefones().addAll(Arrays.asList("93883321", "34252625"));
-
-		// cli2.addPerfil(Perfil.ADMIN);
+	    cli2.addPerfil(Perfil.ADMIN);
 
 		Endereco e1 = new Endereco(null, "Rua Flores", "300", "Apto 303", "Jardim", "38220834", cli1, c1);
 		Endereco e2 = new Endereco(null, "Avenida Matos", "105", "Sala 800", "Centro", "38777012", cli1, c2);
